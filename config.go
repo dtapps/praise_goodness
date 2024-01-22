@@ -18,3 +18,12 @@ func (c *Client) ConfigClient(config *ClientConfig) {
 	c.config.mchID = config.MchID
 	c.config.Key = config.Key
 }
+
+// ConfigApiMongoFun 接口日志配置
+func (c *Client) ConfigApiMongoFun(apiClientFun golog.ApiMongoFun) {
+	client := apiClientFun()
+	if client != nil {
+		c.mongoLog.client = client
+		c.mongoLog.status = true
+	}
+}
