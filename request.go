@@ -19,7 +19,7 @@ func (c *Client) request(ctx context.Context, url string, param gorequest.Params
 	param.Set("sign", c.sign(ctx, param))
 
 	// 请求地址
-	uri := c.config.apiURL + url
+	uri := c.GetApiURL() + url
 
 	// 设置请求地址
 	c.httpClient.SetUri(uri)

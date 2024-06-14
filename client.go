@@ -31,7 +31,7 @@ func NewClient(config *ClientConfig) (*Client, error) {
 
 	c := &Client{}
 
-	if c.config.apiURL == "" {
+	if config.ApiURL == "" {
 		return nil, errors.New("需要配置ApiURL")
 	}
 

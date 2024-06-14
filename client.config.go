@@ -2,14 +2,26 @@ package praise_goodness
 
 import "go.dtapp.net/gorequest"
 
+func (c *Client) GetApiURL() string {
+	return c.config.apiURL
+}
+
 func (c *Client) SetApiURL(v string) *Client {
 	c.config.apiURL = v
 	return c
 }
 
+func (c *Client) GetMchID() int64 {
+	return c.config.mchID
+}
+
 func (c *Client) SetMchID(v int64) *Client {
 	c.config.mchID = v
 	return c
+}
+
+func (c *Client) GetKey() string {
+	return c.config.Key
 }
 
 func (c *Client) SetKey(v string) *Client {
